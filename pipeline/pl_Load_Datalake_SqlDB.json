@@ -1,5 +1,5 @@
 {
-	"name": "pl_Load_ADLS_SQLDB",
+	"name": "pl_Load_Datalake_SqlDB",
 	"properties": {
 		"activities": [
 			{
