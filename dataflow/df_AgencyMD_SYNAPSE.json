@@ -1,0 +1,56 @@
+{
+	"name": "df_AgencyMD_SYNAPSE",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_adls_agencyMaster",
+						"type": "DatasetReference"
+					},
+					"name": "agencyMD"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_syn_nycPayrollRollAgencyMd",
+						"type": "DatasetReference"
+					},
+					"name": "synapseAgencyTable"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          AgencyID as short,",
+				"          AgencyName as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> agencyMD",
+				"agencyMD sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          AgencyID as string,",
+				"          AgencyName as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     staged: true,",
+				"     allowCopyCommand: true,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          AgencyID,",
+				"          AgencyName",
+				"     )) ~> synapseAgencyTable"
+			]
+		}
+	}
+}

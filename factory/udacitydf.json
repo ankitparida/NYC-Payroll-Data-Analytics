@@ -1,0 +1,9 @@
+{
+	"name": "udacitydf",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "06db5fed-96ef-4d1f-a20b-993a459ad3bb",
+		"tenantId": "f1fb4791-e1ca-4952-874f-d4029a9cc2c7"
+	}
+}
