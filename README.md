@@ -9,3 +9,7 @@ The City of New York would like to develop a Data Analytics platform on Azure Sy
 The project team also includes the city’s quality assurance experts who will test the pipelines to find any errors and improve overall data quality.
 
 The source data resides in Azure Data Lake and needs to be processed in a NYC data warehouse in Azure Synapse Analytics. The source datasets consist of CSV files with Employee master data and monthly payroll data entered by various City agencies.
+
+
+
+![image](https://user-images.githubusercontent.com/30798966/230777974-21cc32fe-fb71-4ca9-9f28-fa96c9afed12.png)
